@@ -1,0 +1,3 @@
+interface ISay {
+    void say();
+}
