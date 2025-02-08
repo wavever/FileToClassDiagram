@@ -16,17 +16,7 @@ export default function DiagramView({ code }: DiagramViewProps) {
             startOnLoad: true,
             theme: 'default',
             securityLevel: 'loose',
-            fontFamily: 'monospace',
-            // 确保文字能够正确显示
-            flowchart: {
-                htmlLabels: true,
-                useMaxWidth: true,
-            },
-            // 类图特定配置
-            classDiagram: {
-                htmlLabels: true,
-                useMaxWidth: true,
-            }
+            fontFamily: 'monospace'
         })
 
         const renderDiagram = async () => {
@@ -52,7 +42,7 @@ export default function DiagramView({ code }: DiagramViewProps) {
                         svgElement.style.maxWidth = '100%'
                         svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet')
                     }
-                } catch (error) {
+                } catch (error: any) {
                     console.error('Error rendering diagram:', error)
                     if (containerRef.current) {
                         containerRef.current.innerHTML = `<div class="text-red-500">Error rendering diagram: ${error.message}</div>`

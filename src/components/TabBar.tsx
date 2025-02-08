@@ -36,14 +36,10 @@ export default function TabBar({ activeTab, onTabChange, onSync, autoSync, onAut
                     </div>
                     <span className="ml-2 text-sm text-gray-600">自动同步</span>
                 </label>
-                {!autoSync && (
-                    <button
-                        className="ml-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
-                        onClick={onSync}
-                    >
-                        同步
-                    </button>
-                )}
+                <button
+                    className="ml-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+                    onClick={onSync}
+                    disabled={autoSync}>同步</button>
             </div>
         </div>
     )
